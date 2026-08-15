@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} — Boltz Performance Coaching</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A;
+    --black-soft:#151515;
+    --black-deep:#000000;
+    --white:#F5F5F3;
+    --white-pure:#FFFFFF;
+    --orange:#C2410C;
+    --orange-soft:#E2540E;
+    --orange-glow:rgba(194,65,12,0.18);
+    --text-muted-dark:rgba(245,245,243,0.66);
+    --text-muted-light:rgba(10,10,10,0.68);
+    --card-bg:rgba(194,65,12,0.07);
+    --card-border:rgba(194,65,12,0.24);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+  img,svg{display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.01em;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;width:100%;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 32px;
+    background:rgba(10,10,10,0.96);
+    box-shadow:0 4px 24px rgba(0,0,0,0.4);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(245,245,243,0.08);
+  }
+  .nav-logo{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:0.03em;color:var(--white-pure);text-transform:uppercase;text-decoration:none;}
+  .nav-logo span{color:var(--orange);}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{
+    color:var(--white);text-decoration:none;font-size:14.5px;font-weight:500;opacity:0.82;
+    transition:opacity 0.2s ease, color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a.active{opacity:1;color:var(--orange);}
+  .nav-cta{
+    background:var(--orange);color:var(--white-pure);padding:12px 24px;border-radius:3px;
+    font-weight:600;font-size:14px;text-decoration:none;transition:background 0.2s ease, transform 0.15s ease;
+  }
+  .nav-cta:hover{background:var(--orange-soft);transform:translateY(-2px);}
+  @media (max-width:760px){ .nav-links{display:none;} }
+
+  .btn-primary{
+    display:inline-block;background:var(--orange);color:var(--white-pure);
+    padding:17px 42px;border-radius:3px;font-weight:700;font-size:15px;border:none;cursor:pointer;
+    text-decoration:none;letter-spacing:0.03em;text-transform:uppercase;transition:background 0.2s ease, transform 0.15s ease;
+  }
+  .btn-primary:hover{background:var(--orange-soft);transform:translateY(-2px);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--black-deep);border-top:1px solid rgba(245,245,243,0.08);padding:52px 24px 36px;text-align:center;}
+  .footer-credentials{font-size:13px;color:var(--text-muted-dark);letter-spacing:0.02em;margin-bottom:18px;}
+  .footer-credentials strong{color:var(--white-pure);}
+  .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-bottom:22px;}
+  .footer-links a{color:var(--text-muted-dark);text-decoration:none;font-size:13.5px;transition:color 0.2s ease;}
+  .footer-links a:hover{color:var(--orange);}
+  footer p{font-size:13px;color:var(--text-muted-dark);}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">BOLTZ<span> PERFORMANCE</span></a>
+  <div class="nav-links"><a href="/blog/" class="{% if section == 'blog' %}active{% endif %}">Blog</a></div>
+  <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="nav-cta">Book Your Strategy Call</a>
+</nav>
+
+{{ content | safe }}
+
+<footer>
+  <p class="footer-credentials"><strong>Coach Boltz</strong> — ISSA Elite Trainer &middot; Army Veteran &middot; Neurotype Certified &middot; Hormone Specialist</p>
+  <div class="footer-links">
+    <a href="https://instagram.com/iamcoachboltz" target="_blank" rel="noopener noreferrer">@iamcoachboltz</a>
+    <a href="/blog/">Blog</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms</a>
+  </div>
+  <p>&copy; 2026 Boltz Performance Coaching. All rights reserved.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+</script>
+
+</body>
+</html>

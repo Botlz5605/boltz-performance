@@ -1,0 +1,36 @@
+---
+layout: base.njk
+section: blog
+---
+<style>
+  .post-hero{padding:150px 24px 50px;max-width:760px;margin:0 auto;}
+  .post-eyebrow{
+    display:inline-block;color:var(--orange);font-weight:600;font-size:13px;
+    letter-spacing:0.16em;text-transform:uppercase;margin-bottom:18px;
+  }
+  .post-title{font-size:clamp(28px,5.5vw,44px);line-height:1.15;color:var(--white-pure);margin-bottom:16px;}
+  .post-date{font-size:13.5px;color:var(--text-muted-dark);}
+  .post-hero-img{width:100%;max-width:760px;margin:0 auto;display:block;border-radius:10px;aspect-ratio:16/9;object-fit:cover;}
+  .post-body{max-width:700px;margin:0 auto;padding:50px 24px 110px;font-size:16.5px;line-height:1.75;color:var(--text-muted-dark);}
+  .post-body h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:24px;color:var(--white-pure);margin:40px 0 16px;}
+  .post-body h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:19px;color:var(--white-pure);margin:32px 0 14px;}
+  .post-body p{margin-bottom:20px;}
+  .post-body ul, .post-body ol{margin:0 0 20px 22px;}
+  .post-body li{margin-bottom:8px;}
+  .post-body a{color:var(--orange);}
+  .post-body img{width:100%;border-radius:8px;margin:24px 0;}
+  .post-cta{max-width:700px;margin:0 auto;padding:0 24px 100px;text-align:center;}
+</style>
+
+<div class="post-hero">
+  <span class="post-eyebrow">Boltz Performance Blog</span>
+  <h1 class="post-title display">{{ title }}</h1>
+  <div class="post-date">{{ date | date("MMMM D, YYYY") }}</div>
+</div>
+{% if image %}<img class="post-hero-img" src="{{ image }}" alt="{{ title }}">{% endif %}
+<div class="post-body">
+  {{ content | safe }}
+</div>
+<div class="post-cta">
+  <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
+</div>
