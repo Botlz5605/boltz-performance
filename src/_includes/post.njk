@@ -19,18 +19,6 @@ section: blog
   .post-body li{margin-bottom:8px;}
   .post-body a{color:var(--orange);}
   .post-body img{width:100%;border-radius:8px;margin:24px 0;}
-  .post-cta{max-width:700px;margin:0 auto;padding:0 24px 100px;text-align:center;}
-</style>
-
-<div class="post-hero">
-  <span class="post-eyebrow">Boltz Performance Blog</span>
-  <h1 class="post-title display">{{ title }}</h1>
-  <div class="post-date">{{ date | date("MMMM D, YYYY") }}</div>
-</div>
-{% if image %}<img class="post-hero-img" src="{{ image }}" alt="{{ title }}">{% endif %}
-<div class="post-body">
-  {{ content | safe }}
-</div>
-<div class="post-cta">
-  <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
-</div>
+  .post-body table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:15px;}
+  .post-body th, .post-body td{text-align:left;padding:12px 14px;border-bottom:1px solid rgba(245,245,243,0.12);}
+  .post-body th{color:var(--white-pure);font-weight:700;background:var(--card-bg);}
