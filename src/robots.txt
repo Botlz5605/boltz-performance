@@ -1,1 +1,4 @@
-User-agent: * Allow: / Sitemap: https://coachboltz.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://coachboltz.com/sitemap.xml
