@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="//embed.typeform.com/next/embed.js" async></script>
 <style>
   :root{
     --black:#0A0A0A;
@@ -251,6 +254,12 @@
   .proof-wall-subhead{
     text-align:center;font-size:15px;color:var(--text-muted-light);max-width:520px;margin:0 auto 26px;
   }
+
+  /* ---------- GOOGLE REVIEWS ---------- */
+  .google-reviews-section{background:var(--white);padding:0 24px 100px;}
+  .google-reviews-headline{font-size:clamp(24px,3.5vw,32px);text-align:center;color:var(--black-deep);margin-bottom:36px;}
+  .google-reviews-headline span{color:var(--orange);}
+  .google-reviews-widget-wrap{max-width:1000px;margin:0 auto;}
   .proof-wall{
     columns:3 240px;column-gap:18px;max-width:1050px;margin:0 auto;
   }
@@ -343,7 +352,7 @@
 <nav class="nav" id="nav">
   <div class="nav-logo">BOLTZ<span> PERFORMANCE</span></div>
   <div class="nav-links"><a href="/blog/">Blog</a></div>
-  <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="nav-cta">Book Your Strategy Call</a>
+  <a href="https://calendly.com/coach-ihp/1-1consult" class="nav-cta" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
 </nav>
 
 <!-- HERO -->
@@ -364,7 +373,7 @@
     <span class="hero-eyebrow">For men 40+ who've outgrown generic programs</span>
     <h1 class="hero-title display">Rebuild The Engine.<br>Drop The Fat.<br><span>Get Your Body Back.</span></h1>
     <p class="hero-subtitle">The Whole Body Strength Matrix and EOD Carb Cycling Method — built for men over 40 who want back in fast. No 5am cardio. No giving up carbs. No wrecking joints that already talk back.</p>
-    <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
+    <a href="https://calendly.com/coach-ihp/1-1consult" class="btn-primary" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
     <div class="hero-microtrust">30 minutes, one-on-one with Coach Boltz. No pressure, no sales script — just a plan.</div>
   </div>
   <div class="scroll-indicator" onclick="document.getElementById('pain').scrollIntoView({behavior:'smooth'})">
@@ -523,6 +532,15 @@
   </div>
 </section>
 
+<!-- GOOGLE REVIEWS -->
+<section class="google-reviews-section">
+  <h2 class="google-reviews-headline display">Verified On <span>Google</span></h2>
+  <div class="google-reviews-widget-wrap">
+    <div id="JFWebsiteWidget-01a00dfae2c870008c1eae99995ba4e0af53"></div>
+    <script src="https://www.jotform.com/website-widgets/embed/01a00dfae2c870008c1eae99995ba4e0af53"></script>
+  </div>
+</section>
+
 <!-- MID-PAGE CTA -->
 <section class="mid-cta">
   <div class="container mid-cta-inner">
@@ -594,7 +612,7 @@
       </div>
     </div>
     <div class="investment-cta">
-      <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
+      <a href="https://calendly.com/coach-ihp/1-1consult" class="btn-primary" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
     </div>
   </div>
 </section>
@@ -616,7 +634,7 @@
       <li>A plan built to flex when you travel, get sick, or life gets in the way</li>
       <li>No yearly contracts — a 4-month commitment, then you decide what's next</li>
     </ul>
-    <a href="https://calendly.com/coach-ihp/1-1consult" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Call</a>
+    <a href="https://calendly.com/coach-ihp/1-1consult" class="btn-primary" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
   </div>
 </section>
 
@@ -638,6 +656,26 @@
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+  });
+
+  // Booking + application flow: open Calendly's popup first. Once a time slot
+  // is actually confirmed, Calendly fires a postMessage — we catch that and
+  // open the Typeform application popup right after, so applying is the very
+  // next step instead of a separate page.
+  function openBookingFlow(e) {
+    e.preventDefault();
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/coach-ihp/1-1consult' });
+    }
+    return false;
+  }
+
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.event === 'calendly.event_scheduled') {
+      if (window.tf) {
+        window.tf.createPopup('jRwRfkqV', { size: 100 }).open();
+      }
+    }
   });
 
   gsap.set([".hero-eyebrow", ".hero-title", ".hero-subtitle", ".hero-content .btn-primary", ".hero-microtrust", ".scroll-indicator"], { opacity: 0, y: 30 });
