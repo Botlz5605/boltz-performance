@@ -1,1 +1,32 @@
-module.exports = function(eleventyConfig) { eleventyConfig.addPassthroughCopy("src/images"); eleventyConfig.addPassthroughCopy("src/admin"); eleventyConfig.addPassthroughCopy({ "src/index.html": "index.html" }); eleventyConfig.addFilter("date", (value, format) => { const d = new Date(value); if (isNaN(d)) return ""; if (format === "yyyy-LL-dd") { const y = d.getFullYear(); const m = String(d.getMonth() + 1).padStart(2, "0"); const day = String(d.getDate()).padStart(2, "0"); return `${y}-${m}-${day}`; } return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }); }); eleventyConfig.addPassthroughCopy("src/robots.txt"); eleventyConfig.addCollection("posts", (collectionApi) => { return collectionApi.getFilteredByGlob("src/blog/posts/*.md").sort((a, b) => { return b.date - a.date; }); }); return { dir: { input: "src", output: "_site", includes: "_includes" }, templateFormats: ["njk", "md"], htmlTemplateEngine: "njk", markdownTemplateEngine: "njk" }; }
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy({ "src/index.html": "index.html" });
+  eleventyConfig.addFilter("date", (value, format) => {
+    const d = new Date(value);
+    if (isNaN(d)) return "";
+    if (format === "yyyy-LL-dd") {
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return y + "-" + m + "-" + day;
+    }
+    return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  });
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addCollection("posts", (collectionApi) => {
+    return collectionApi.getFilteredByGlob("src/blog/posts/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
+  });
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes"
+    },
+    templateFormats: ["njk", "md"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
+  };
+};
