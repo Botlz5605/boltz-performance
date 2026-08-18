@@ -216,21 +216,6 @@
   }
   @media (max-width:820px){ .about-grid{grid-template-columns:1fr;} .about-photo{max-width:340px;margin:0 auto;} }
 
-  /* ---------- INVESTMENT ---------- */
-  .investment-section{background:var(--black-soft);padding:100px 24px;}
-  .investment-headline{font-size:clamp(27px,4.5vw,38px);text-align:center;color:var(--white-pure);margin-bottom:14px;}
-  .investment-headline span{color:var(--orange);}
-  .investment-subhead{text-align:center;font-size:15.5px;line-height:1.65;color:var(--text-muted-dark);max-width:600px;margin:0 auto 52px;}
-  .investment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto 48px;}
-  .investment-card{
-    background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;
-    padding:32px 26px;text-align:center;
-  }
-  .investment-card svg{margin:0 auto 16px;}
-  .investment-card h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:16px;letter-spacing:0.01em;color:var(--white-pure);margin-bottom:10px;}
-  .investment-card p{font-size:14px;line-height:1.55;color:var(--text-muted-dark);}
-  .investment-cta{text-align:center;}
-  @media (max-width:820px){ .investment-grid{grid-template-columns:1fr;max-width:420px;} }
 
   /* ---------- SOCIAL PROOF (white section) ---------- */
   .proof-section{background:var(--white);color:var(--black-deep);padding:110px 24px;}
@@ -582,37 +567,17 @@
         <div class="faq-answer"><p>You get direct access to Coach Boltz — not a support inbox. Weekly check-ins are the baseline, but questions and adjustments get handled in real time whenever you need them.</p></div>
       </div>
       <div class="faq-item">
+        <div class="faq-question">How much does this cost?<span class="icon"></span></div>
+        <div class="faq-answer"><p>Straight answer: $300/month for Training or Nutrition Coaching on its own, $400/month for both together. No hidden packages, no fine print, no lengthy contract to sign your life away.</p><p>Two things drive that pricing: value and accountability. Value, because you're getting direct access to a real coach — not an app, not a template, not a chatbot — and that's worth more than the cheapest option online. Accountability, because there's no pay-in-full option here. You pay monthly, which means you stay bought into the plan every single month, and I stay on the hook to keep delivering. If the results stop showing up, you walk. That pressure is exactly what keeps this honest on both ends.</p><p>Every plan starts with a free Strategy Call — 30 minutes, one-on-one, no charge, no pitch. That's where we figure out which option actually fits your case.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is there a guarantee?<span class="icon"></span></div>
+        <div class="faq-answer"><p>Do the work for 4 months. If you don't see real, measurable progress — I keep coaching you for free until you do.</p></div>
+      </div>
+      <div class="faq-item">
         <div class="faq-question">How is this different from just hiring any trainer?<span class="icon"></span></div>
         <div class="faq-answer"><p>Most trainers give you a workout. This is a full system — strength training, nutrition, and recovery — built around how your body actually responds, with direct 1:1 coaching adjusting the plan every week.</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- INVESTMENT -->
-<section class="investment-section" id="investment">
-  <div class="container">
-    <h2 class="investment-headline display">What This Costs, And Why <span>We Don't Post A Number</span></h2>
-    <p class="investment-subhead">You're not paying for a template pulled off a shelf — you're paying for a program built around your bloodwork, your recovery, and your neurotype. That number depends on where you're starting. Here's what doesn't change:</p>
-    <div class="investment-grid">
-      <div class="investment-card">
-        <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="#C2410C" stroke-width="2"/><path d="M16 9v7l5 3" stroke="#C2410C" stroke-width="2" stroke-linecap="round"/></svg>
-        <h3>Priced To Your Case</h3>
-        <p>Your plan is scoped after a real assessment — not a flat rate applied to everyone regardless of where they're starting.</p>
-      </div>
-      <div class="investment-card">
-        <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M6 16h20M20 8l6 8-6 8" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3>One Flat Rate</h3>
-        <p>No hidden upsells, no surprise add-ons once you're in. What's quoted on the call is what you pay.</p>
-      </div>
-      <div class="investment-card">
-        <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M16 4l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/></svg>
-        <h3>The Call Costs Nothing</h3>
-        <p>30 minutes, no pressure, no sales script. You leave with a real plan whether you sign up or not.</p>
-      </div>
-    </div>
-    <div class="investment-cta">
-      <a href="https://calendly.com/coach-ihp/1-1consult" class="btn-primary" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
     </div>
   </div>
 </section>
@@ -717,8 +682,6 @@
   gsap.from(".proof-headline", { scrollTrigger: { trigger: ".proof-section", start: "top 75%" }, opacity: 0, y: 30, duration: 0.8, ease: "power3.out" });
   gsap.from(".about-photo", { scrollTrigger: { trigger: ".about-section", start: "top 75%" }, opacity: 0, x: -30, duration: 0.8, ease: "power3.out" });
   gsap.from(".about-eyebrow, .about-headline, .about-body p, .about-chips", { scrollTrigger: { trigger: ".about-section", start: "top 75%" }, opacity: 0, y: 20, duration: 0.7, stagger: 0.08, ease: "power2.out" });
-  gsap.from(".investment-headline, .investment-subhead", { scrollTrigger: { trigger: ".investment-section", start: "top 78%" }, opacity: 0, y: 25, duration: 0.7, ease: "power3.out" });
-  gsap.from(".investment-card", { scrollTrigger: { trigger: ".investment-grid", start: "top 82%" }, opacity: 0, y: 30, duration: 0.6, stagger: 0.1, ease: "power2.out" });
   gsap.set(".proof-card", { opacity: 0, y: 45, rotateX: 14, transformPerspective: 900, transformOrigin: "top center" });
   gsap.to(".proof-card", {
     scrollTrigger: { trigger: ".proof-grid", start: "top 75%", toggleActions: "play none none reverse" },
