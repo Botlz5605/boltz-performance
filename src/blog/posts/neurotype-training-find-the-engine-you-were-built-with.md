@@ -1,4 +1,3 @@
-[Neuroblog.md](https://github.com/user-attachments/files/31645717/Neuroblog.md)
 ---
 title: "Neurotype Training: Find The Engine You Were Built With"
 date: 2026-08-24
