@@ -1,7 +1,7 @@
 ---
 title: "Neurotype Training: Find The Engine You Were Built With"
 date: 2026-08-24
-image: "/images/gallery-bicep.webp"
+image: "/images/hero-background.webp"
 excerpt: "Your body runs like an engine, and there are five kinds. Most guys over 35 have been running the wrong fuel for years — here's how to find the type you actually are and train it right."
 ---
 
