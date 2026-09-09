@@ -144,6 +144,44 @@
   .pain-copy em{font-style:italic;color:var(--black-deep);font-weight:600;}
   @media (max-width:820px){ .pain-quotes{grid-template-columns:1fr;} .pain-headline{font-size:30px;} }
 
+  /* ---------- OLD WAY VS NEW WAY ---------- */
+  .comparison-section{background:var(--white);color:var(--black-deep);padding:0 24px 110px;}
+  .comparison-headline{font-size:clamp(28px,4.2vw,40px);text-align:center;max-width:780px;margin:0 auto 48px;line-height:1.15;}
+  .comparison-headline span{color:var(--orange);}
+  .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:920px;margin:0 auto;}
+  .comparison-col{border-radius:12px;padding:32px 30px;}
+  .comparison-col.old{background:rgba(10,10,10,0.04);border:1px solid rgba(10,10,10,0.1);}
+  .comparison-col.new{background:var(--card-bg);border:1px solid var(--card-border);}
+  .comparison-col h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:19px;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .comparison-col.old h3{color:rgba(10,10,10,0.55);}
+  .comparison-col.new h3{color:var(--orange);}
+  .comparison-col ul{list-style:none;}
+  .comparison-col li{font-size:14.5px;line-height:1.55;padding-left:26px;position:relative;margin-bottom:14px;color:var(--text-muted-light);}
+  .comparison-col.old li::before{content:"✕";position:absolute;left:0;color:rgba(10,10,10,0.35);font-size:13px;top:1px;}
+  .comparison-col.new li::before{content:"✔";position:absolute;left:0;color:var(--orange);font-size:12px;top:2px;}
+  .comparison-col.new li{color:var(--black-deep);font-weight:500;}
+  @media (max-width:760px){ .comparison-grid{grid-template-columns:1fr;} }
+
+  /* ---------- NEUROBUILD ---------- */
+  .neurobuild-section{background:var(--black-deep);padding:110px 24px;text-align:center;}
+  .neurobuild-inner{max-width:680px;margin:0 auto;}
+  .neurobuild-eyebrow{display:inline-block;color:var(--orange);font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:18px;}
+  .neurobuild-headline{font-size:clamp(28px,4.5vw,42px);line-height:1.15;color:var(--white-pure);margin-bottom:22px;}
+  .neurobuild-headline span{color:var(--orange);}
+  .neurobuild-body{font-size:15.5px;line-height:1.7;color:var(--text-muted-dark);margin-bottom:18px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .neurobuild-types{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:28px 0 34px;}
+  .neurobuild-type{border:1px solid var(--card-border);background:var(--card-bg);border-radius:100px;padding:9px 20px;font-size:13px;font-weight:600;color:var(--white-pure);}
+
+  /* ---------- WHAT YOU GET ---------- */
+  .whatyouget-section{background:var(--black-soft);padding:100px 24px;}
+  .whatyouget-headline{font-size:clamp(26px,4vw,34px);text-align:center;color:var(--white-pure);margin-bottom:48px;}
+  .whatyouget-headline span{color:var(--orange);}
+  .whatyouget-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1000px;margin:0 auto;}
+  .wyg-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:26px 24px;}
+  .wyg-card svg{margin-bottom:14px;}
+  .wyg-card h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:15.5px;letter-spacing:0.01em;color:var(--white-pure);margin-bottom:8px;}
+  .wyg-card p{font-size:13.5px;line-height:1.5;color:var(--text-muted-dark);}
+
   /* ---------- SOLUTION ---------- */
   .solution-section{background:var(--black);padding:110px 24px;position:relative;overflow:hidden;}
   .solution-headline{font-size:42px;line-height:1.2;text-align:center;max-width:860px;margin:0 auto 18px;color:var(--white-pure);}
@@ -267,6 +305,23 @@
 
   /* ---------- MID-PAGE CTA BANNER ---------- */
   .mid-cta{background:var(--orange);padding:64px 24px;text-align:center;}
+
+  /* ---------- FREE GUIDES ---------- */
+  .guides-section{background:var(--white);padding:100px 24px;}
+  .guides-headline{font-size:clamp(26px,4vw,34px);text-align:center;color:var(--black-deep);margin-bottom:14px;}
+  .guides-headline span{color:var(--orange);}
+  .guides-subhead{text-align:center;font-size:15.5px;color:var(--text-muted-light);max-width:520px;margin:0 auto 48px;}
+  .guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:900px;margin:0 auto;}
+  .guide-card{
+    background:var(--black-deep);border-radius:10px;overflow:hidden;text-decoration:none;
+    display:block;transition:transform 0.25s ease;
+  }
+  .guide-card:hover{transform:translateY(-4px);}
+  .guide-card-body{padding:28px 26px;}
+  .guide-card-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:10px;}
+  .guide-card h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:19px;color:var(--white-pure);margin-bottom:10px;line-height:1.25;}
+  .guide-card p{font-size:14px;line-height:1.55;color:var(--text-muted-dark);margin-bottom:16px;}
+  .guide-card-cta{font-size:13.5px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:0.03em;}
   .mid-cta-inner{max-width:640px;margin:0 auto;}
   .mid-cta-headline{font-size:32px;line-height:1.2;color:var(--white-pure);margin-bottom:12px;}
   .mid-cta-sub{font-size:15.5px;color:rgba(255,255,255,0.85);margin-bottom:26px;font-style:italic;}
@@ -355,9 +410,9 @@
   </div>
   <div class="hero-content">
     <span class="hero-category">Individualized Online Fitness & Nutrition Coaching</span>
-    <span class="hero-eyebrow">For men 40+ who've outgrown generic programs</span>
+    <span class="hero-eyebrow">For people 40+ who've outgrown generic programs</span>
     <h1 class="hero-title display">Rebuild The Engine.<br>Drop The Fat.<br><span>Get Your Body Back.</span></h1>
-    <p class="hero-subtitle">The Whole Body Strength Matrix and EOD Carb Cycling Method — built for men over 40 who want back in fast. No 5am cardio. No giving up carbs. No wrecking joints that already talk back.</p>
+    <p class="hero-subtitle">Built for people 40+ who want their strength and energy back — fast. No 5am cardio. No giving up carbs. No wrecking joints that already talk back. Powered by the Whole Body Strength Matrix and High Energy Fat Loss System.</p>
     <a href="https://calendly.com/coach-ihp/1-1consult" class="btn-primary" onclick="return openBookingFlow(event)">Book Your Strategy Call</a>
     <div class="hero-microtrust">30 minutes, one-on-one with Coach Boltz. No pressure, no sales script — just a plan.</div>
   </div>
@@ -381,6 +436,51 @@
   </div>
 </section>
 
+<!-- OLD WAY VS NEW WAY -->
+<section class="comparison-section">
+  <h2 class="comparison-headline display">Same Effort. <span>Different System.</span></h2>
+  <div class="comparison-grid">
+    <div class="comparison-col old">
+      <h3>✕ What You've Already Tried</h3>
+      <ul>
+        <li>Generic programs that ignore how your body actually recovers</li>
+        <li>Cut carbs and add more cardio the moment progress stalls</li>
+        <li>A template built for someone 20 years younger</li>
+        <li>An app or chatbot when something feels off, not a person</li>
+        <li>One plan that breaks the moment work travel or life gets busy</li>
+        <li>No real check-in — you find out you're off track weeks later</li>
+      </ul>
+    </div>
+    <div class="comparison-col new">
+      <h3>✔ How This Works Instead</h3>
+      <ul>
+        <li>Programming matched to your actual neurotype and recovery capacity</li>
+        <li>High Energy Fat Loss — food that flexes, not another restriction</li>
+        <li>A system built around where you're starting, not a shelf template</li>
+        <li>Direct access to Boltz — text him, no support ticket, no chatbot</li>
+        <li>A plan built to flex when you travel, get sick, or life gets in the way</li>
+        <li>Weekly adjustments from a coach tracking your case, not a spreadsheet</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NEUROBUILD -->
+<section class="neurobuild-section">
+  <div class="neurobuild-inner">
+    <span class="neurobuild-eyebrow">The Mechanism Behind Everything</span>
+    <h2 class="neurobuild-headline display">It Starts With Your <span>Neurotype</span></h2>
+    <p class="neurobuild-body">Before any program gets built, we find out how your specific nervous system actually responds to training and stress. That's what makes the Whole Body Strength Matrix, the High Energy Fat Loss System, and the Multi Contraction Method actually work for you — they're built on top of your type, not applied blind.</p>
+    <div class="neurobuild-types">
+      <span class="neurobuild-type">Challenger</span>
+      <span class="neurobuild-type">Guardian</span>
+      <span class="neurobuild-type">Storm</span>
+    </div>
+    <p class="neurobuild-body">Take the free Neurobuild Assessment to find out which one you are — before you ever book a call.</p>
+    <a href="https://neurotypeassessment.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">Take The Free Assessment</a>
+  </div>
+</section>
+
 <!-- SOLUTION -->
 <section class="solution-section" id="solution">
   <div class="container">
@@ -399,8 +499,8 @@
       </div>
       <div class="solution-card">
         <svg class="solution-icon" viewBox="0 0 32 32" fill="none"><path d="M6 20c3-8 8-8 10-14 2 6 10 6 10 14a10 10 0 0 1-20 0Z" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/></svg>
-        <h3>EOD Carb Cycling Method</h3>
-        <p>You alternate carb intake every other day to reset insulin sensitivity, keep your energy high for training, and stop your body from adapting to a deficit and stalling. You still eat carbs. You still eat food you like. You just stop fighting your own hormones.</p>
+        <h3>High Energy Fat Loss System</h3>
+        <p>You alternate carb intake every other day — a method called EOD Carb Cycling — to reset insulin sensitivity, keep your energy high for training, and stop your body from adapting to a deficit and stalling. You still eat carbs. You still eat food you like. You just stop fighting your own hormones.</p>
         <ul>
           <li><strong>The "just cut carbs" lie.</strong> That's the diet that worked at 28. It's also what tanked your energy and brought the weight back. This isn't that.</li>
           <li><strong>The Week 3 Wall.</strong> Every 40+ diet hits the same metabolic slowdown right around week three — unless something resets it before it happens.</li>
@@ -412,7 +512,7 @@
         <h3>Multi Contraction Method</h3>
         <p>Your training doesn't just move weight — it targets how your muscles contract. Eccentric work builds movement efficiency and resilience into your joints and connective tissue, so the same lifts that used to beat you up start bulletproofing you instead. Isometric training builds raw force production and strength gains without adding extra wear on a body that's already logged four decades of reps.</p>
         <ul>
-          <li><strong>The rep you've been skipping.</strong> Most guys only train the lifting half of the lift. The lowering half is where the real joint-proofing happens — and almost no program coaches it.</li>
+          <li><strong>The rep you've been skipping.</strong> Most people only train the lifting half of the lift. The lowering half is where the real joint-proofing happens — and almost no program coaches it.</li>
           <li><strong>Force without the pounding.</strong> Isometric holds build strength and force production without the joint wear four decades of reps have already put on you.</li>
           <li>Trains the full contraction cycle instead of just the lift you see in the mirror</li>
         </ul>
@@ -424,6 +524,53 @@
       <div class="extra-chip"><strong>Weekly Adjustments</strong> — from a coach who knows your case</div>
       <div class="extra-chip"><strong>Direct Coach Access</strong> — not a support inbox</div>
       <div class="extra-chip"><strong>Travel-Ready</strong> — built to flex around your schedule</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="whatyouget-section">
+  <h2 class="whatyouget-headline display">What You Actually <span>Get</span></h2>
+  <div class="whatyouget-grid">
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="#C2410C" stroke-width="2"/><path d="M11 16l3.5 3.5L21 12" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>A Real Assessment</h3>
+      <p>Bloodwork, training history, recovery capacity — not a template pulled off a shelf.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M6 24l6-14 5 8 4-6 5 12" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>The Whole Body Strength Matrix</h3>
+      <p>Matched to how your nervous system actually recovers, not a generic split.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M16 6v20M8 12l8-6 8 6M8 20l8 6 8-6" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>The High Energy Fat Loss System</h3>
+      <p>So you stop losing muscle just to lose fat.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M9 20l7-14 7 14" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/><path d="M12 20h8" stroke="#C2410C" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>The Multi Contraction Method</h3>
+      <p>So your joints hold up as long as your ambition does.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="#C2410C" stroke-width="2"/><path d="M16 9v7l5 3" stroke="#C2410C" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>Weekly Adjustments</h3>
+      <p>From a coach tracking your case — not a spreadsheet, not an app.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M6 10h20v14H6z" stroke="#C2410C" stroke-width="2"/><path d="M6 10l10 8 10-8" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Direct Access To Boltz</h3>
+      <p>Text him. No support ticket, no chatbot, no waiting on a call center.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M4 16h6l2-6 4 12 3-9 2 6h7" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>A Plan Built To Flex</h3>
+      <p>Travel, get sick, life gets in the way — the plan adjusts instead of breaking.</p>
+    </div>
+    <div class="wyg-card">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none"><path d="M6 16h20M20 8l6 8-6 8" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>No Yearly Contracts</h3>
+      <p>A 4-month commitment, then you decide what's next.</p>
     </div>
   </div>
 </section>
@@ -490,7 +637,7 @@
 <section class="proof-section" id="results">
   <div class="container">
     <h2 class="proof-headline display">Real Words From <span>Real Clients</span></h2>
-    <p class="proof-subhead">No stock transformations. Real before/afters, real numbers, real messages — straight from the men running this system.</p>
+    <p class="proof-subhead">No stock transformations. Real before/afters, real numbers, real messages — straight from the people running this system.</p>
 
     <div class="stat-bar">
       <div class="stat"><div class="stat-number">-8kg</div><div class="stat-label">Adam dropped in 12 weeks — more strength, not less</div></div>
@@ -535,6 +682,22 @@
   </div>
 </section>
 
+<!-- FREE GUIDES -->
+<section class="guides-section">
+  <h2 class="guides-headline display">Not Ready To Book? <span>Grab These First.</span></h2>
+  <p class="guides-subhead">Free guides pulled straight from the same system used with clients — no email required to see what's inside, just to get the PDF.</p>
+  <div class="guides-grid">
+    <a href="https://athlete-gpp.kit.com/c285ae8974" target="_blank" rel="noopener noreferrer" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-card-label">Free Guide</div>
+        <h3>The Arm Growth Blueprint</h3>
+        <p>The exact framework for arms that actually grow — frequency, volume, and full coverage, not just more curls.</p>
+        <div class="guide-card-cta">Get The Free Guide →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <img class="faq-bg-photo" src="images/faq-background.webp" width="1344" height="896" alt="" loading="lazy" decoding="async">
@@ -552,7 +715,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-question">Do I have to give up carbs to lose fat?<span class="icon"></span></div>
-        <div class="faq-answer"><p>No. That's the whole point of EOD Carb Cycling. You alternate higher and lower carb days instead of cutting them out completely — which keeps your energy up for training and stops the metabolic stall most low-carb diets hit around week three.</p></div>
+        <div class="faq-answer"><p>No. That's the whole point of the High Energy Fat Loss System. Underneath it is a method called EOD Carb Cycling — you alternate higher and lower carb days instead of cutting them out completely, which keeps your energy up for training and stops the metabolic stall most low-carb diets hit around week three.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-question">I'm not in terrible shape, is this still for me?<span class="icon"></span></div>
@@ -592,7 +755,7 @@
     <ul class="closing-stack">
       <li>A real assessment — bloodwork, training history, recovery capacity. Not a template pulled off a shelf.</li>
       <li>The Whole Body Strength Matrix, matched to how your nervous system actually recovers</li>
-      <li>The EOD Carb Cycling Method, so you stop losing muscle just to lose fat</li>
+      <li>The High Energy Fat Loss System, so you stop losing muscle just to lose fat</li>
       <li>The Multi Contraction Method, so your joints hold up as long as your ambition does</li>
       <li>Weekly adjustments from a coach tracking your case — not a spreadsheet</li>
       <li>Direct access to Boltz. Text him. No support ticket, no chatbot.</li>
@@ -664,10 +827,15 @@
   });
 
   gsap.from(".pain-headline, .pain-subhead", { scrollTrigger: { trigger: ".pain-section", start: "top 75%" }, opacity: 0, y: 30, duration: 0.8, ease: "power3.out", stagger: 0.1 });
+  gsap.from(".comparison-headline", { scrollTrigger: { trigger: ".comparison-section", start: "top 75%" }, opacity: 0, y: 25, duration: 0.7, ease: "power3.out" });
+  gsap.from(".comparison-col", { scrollTrigger: { trigger: ".comparison-grid", start: "top 80%" }, opacity: 0, y: 30, duration: 0.6, stagger: 0.15, ease: "power2.out" });
+  gsap.from(".neurobuild-eyebrow, .neurobuild-headline, .neurobuild-body, .neurobuild-types, .neurobuild-inner .btn-primary", { scrollTrigger: { trigger: ".neurobuild-section", start: "top 75%" }, opacity: 0, y: 25, duration: 0.7, stagger: 0.08, ease: "power2.out" });
   gsap.from(".pain-quote", { scrollTrigger: { trigger: ".pain-quotes", start: "top 80%" }, opacity: 0, y: 25, duration: 0.6, stagger: 0.1, ease: "power2.out" });
   gsap.from(".pain-copy", { scrollTrigger: { trigger: ".pain-copy", start: "top 85%" }, opacity: 0, y: 20, duration: 0.8, ease: "power2.out" });
 
   gsap.from(".solution-headline, .solution-subtext", { scrollTrigger: { trigger: ".solution-section", start: "top 72%" }, opacity: 0, y: 35, duration: 0.8, ease: "power3.out", stagger: 0.1 });
+  gsap.from(".whatyouget-headline", { scrollTrigger: { trigger: ".whatyouget-section", start: "top 75%" }, opacity: 0, y: 25, duration: 0.7, ease: "power3.out" });
+  gsap.from(".wyg-card", { scrollTrigger: { trigger: ".whatyouget-grid", start: "top 82%" }, opacity: 0, y: 30, duration: 0.6, stagger: 0.08, ease: "power2.out" });
   gsap.set(".solution-card", { opacity: 0, y: 55, rotateX: 18, transformPerspective: 900, transformOrigin: "top center" });
   gsap.to(".solution-card", {
     scrollTrigger: { trigger: ".solution-grid", start: "top 70%", toggleActions: "play none none reverse" },
