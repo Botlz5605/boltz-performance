@@ -1,7 +1,7 @@
 ---
 title: "Whole Body Training: A Short History, and Why It's Making a Comeback"
 date: 2026-09-11
-image: "[PLACEHOLDER - choose an existing site image]"
+image: "src/images/gallery-pullup.webp"
 excerpt: "Whole body training built some of the strongest physiques in history, then fell out of favor for decades. Here's why it's back — and where it still falls short."
 ---
 
