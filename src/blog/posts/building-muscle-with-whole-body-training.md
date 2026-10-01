@@ -1,7 +1,7 @@
 ---
 title: "Building Muscle with Whole Body Training: What the Research Says and How to Set It Up"
 date: 2026-10-01
-image: "[PLACEHOLDER - choose an existing site image]"
+image: "/images/gallery-cablepress.webp"
 excerpt: "Whole body training builds muscle when the weekly volume is there. Here is what the research says about frequency and volume, and how the Whole Body Strength Matrix puts it to work."
 ---
 
