@@ -1,7 +1,7 @@
 ---
 title: "Whole Body vs. Split Training: Which One Fits You?"
 date: 2026-10-26
-image: "[PLACEHOLDER - choose an existing site image]"
+image: "/images/gallery-bicep.webp"
 excerpt: "Research shows whole body and split training build similar muscle when weekly work is the same. Here is how to choose the one you will actually stick with."
 ---
 
