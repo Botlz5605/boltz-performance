@@ -1,7 +1,7 @@
 ---
 title: "Unilateral vs. Bilateral Training: When to Use One Leg or Two"
 date: 2026-11-10
-image: "[PLACEHOLDER - choose an existing site image]"
+image: "/images/faq-background.webp"
 excerpt: "Single-limb and two-limb exercises build similar muscle. Each one builds the most strength in the way you train it. Here is what the research says and how to choose after 40."
 ---
 
